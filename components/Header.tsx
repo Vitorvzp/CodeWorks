@@ -4,7 +4,7 @@ import { AuthModal } from './AuthModal';
 
 const NAV_SECTIONS = [
   { label: 'Início', href: '#hero' },
-  { label: 'Recursos', href: '#features' },
+  { label: 'Explicação', href: '#features' },
   { label: 'Preços', href: '#pricing' },
   { label: 'Contato', href: '#cta' },
 ];
@@ -47,7 +47,12 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80; // Offset para compensar espaçamento
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      });
     }
   };
 

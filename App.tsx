@@ -59,7 +59,7 @@ function App() {
               opacity: videoOpacity,
             }}
           >
-            <source src="/src/asssets/intro.mp4" type="video/mp4" />
+            <source src="/intro.mp4" type="video/mp4" />
           </video>
 
           {/* Gradiente para conectar as seções */}

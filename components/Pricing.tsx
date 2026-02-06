@@ -53,7 +53,7 @@ export const Pricing: React.FC = () => {
     const { isVisible: titleVisible } = useScrollReveal(titleRef);
 
     return (
-        <section className="max-w-7xl mx-auto px-6 md:px-20 py-32">
+        <section className="max-w-7xl mx-auto px-6 md:px-20 pt-40 pb-32">
             <div
                 ref={titleRef}
                 className={`text-center mb-16 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -83,7 +83,7 @@ const PricingCard: React.FC<{ plan: typeof plans[0]; index: number }> = ({ plan,
     return (
         <div
             ref={ref}
-            className={`relative p-8 rounded-3xl transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+            className={`relative p-8 rounded-3xl transition-all duration-700 flex flex-col ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
                 } ${plan.popular
                     ? 'bg-primary text-white scale-105 shadow-2xl shadow-primary/20'
                     : 'glass-effect bg-white/50 dark:bg-white/5 border border-primary/10 dark:border-white/10'
@@ -115,7 +115,7 @@ const PricingCard: React.FC<{ plan: typeof plans[0]; index: number }> = ({ plan,
                 </p>
             </div>
 
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3">
                         <span className={`material-symbols-outlined text-lg ${plan.popular ? 'text-white' : 'text-primary dark:text-white'}`}>
@@ -130,8 +130,8 @@ const PricingCard: React.FC<{ plan: typeof plans[0]; index: number }> = ({ plan,
 
             <button
                 className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02] ${plan.popular
-                        ? 'bg-white text-primary hover:bg-gray-100'
-                        : 'bg-primary text-white hover:bg-primary/90 dark:bg-white dark:text-primary dark:hover:bg-gray-100'
+                    ? 'bg-white text-primary hover:bg-gray-100'
+                    : 'bg-primary text-white hover:bg-primary/90 dark:bg-white dark:text-primary dark:hover:bg-gray-100'
                     }`}
             >
                 {plan.cta}

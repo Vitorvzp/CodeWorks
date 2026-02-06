@@ -89,12 +89,11 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
             onClick={(e) => scrollToSection(e, '#hero')}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <span
-              className="material-symbols-outlined text-2xl text-white drop-shadow-sm transition-transform group-hover:scale-110"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}
-            >
-              ac_unit
-            </span>
+            <img
+              src="/logo.png"
+              alt="CodeWork"
+              className="w-8 h-8 object-contain transition-transform group-hover:scale-110 drop-shadow-lg"
+            />
             <span
               className="text-lg font-semibold tracking-tight text-white"
               style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}

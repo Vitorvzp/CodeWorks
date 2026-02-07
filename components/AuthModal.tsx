@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 interface AuthModalProps {
@@ -13,6 +14,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
     const [loading, setLoading] = useState(false);
 
     const { signIn } = useAuth();
+    const navigate = useNavigate();
 
     // Bloquear scroll quando modal está aberto
     useEffect(() => {
@@ -40,6 +42,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                 onClose();
                 setEmail('');
                 setPassword('');
+                navigate('/home');
             }
         } catch (err) {
             setError('Ocorreu um erro inesperado');
